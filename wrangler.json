@@ -3,9 +3,12 @@
     "name": "bsky",
     "compatibility_date": "2025-07-15",
     "compatibility_flags": ["nodejs_compat"],
-    "main": "src/index.ts",
+    "main": "build/worker/shim.mjs",
     "route": {
         "pattern": "bsky.lorypelli.dev",
         "custom_domain": true
+    },
+    "build": {
+        "command": "cargo install -q worker-build && worker-build"
     }
 }
