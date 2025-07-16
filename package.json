@@ -1,5 +1,5 @@
 {
-    "name": "cdn",
+    "name": "bsky",
     "private": true,
     "scripts": {
         "dev": "wrangler dev",
