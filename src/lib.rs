@@ -1,4 +1,4 @@
-use worker::{event, Request, Env, Context, Result, Response, Url};
+use worker::{Context, Env, Request, Response, Result, Url, event};
 
 const DID: &str = "did:plc:jai46evw5qma2hfcrq7mxyjc";
 
