@@ -24,6 +24,10 @@ async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
 }
 
 fn redirect() -> Result<Response> {
-    let url = concat!("https://bsky.app/profile/", did!());
+    let url = bsky_url();
     Response::redirect(Url::parse(url)?)
+}
+
+const fn bsky_url<'a>() -> &'a str {
+    concat!("https://bsky.app/profile/", did!())
 }
