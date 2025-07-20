@@ -19,7 +19,7 @@ async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
     match well_known_uri {
         Some("atproto-did") => Response::ok(did!()),
         Some("discord") => Response::ok(dh!()),
-        Some(_) | None => redirect(),
+        _ => redirect(),
     }
 }
 
