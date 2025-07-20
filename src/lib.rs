@@ -14,8 +14,8 @@ macro_rules! dh {
 
 #[event(fetch)]
 async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
-    let url = req.url()?;
-    let well_known_uri = url.path().strip_prefix("/.well-known/");
+    let path = req.path();
+    let well_known_uri = path.strip_prefix("/.well-known/");
     match well_known_uri {
         Some("atproto-did") => Response::ok(did!()),
         Some("discord") => Response::ok(dh!()),
