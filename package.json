@@ -6,8 +6,8 @@
         "prod": "wrangler deploy"
     },
     "devDependencies": {
-        "@cloudflare/workers-types": "^4.20250715.0",
+        "@cloudflare/workers-types": "^4.20250719.0",
         "husky": "^9.1.7",
-        "wrangler": "^4.24.3"
+        "wrangler": "^4.25.0"
     }
 }
