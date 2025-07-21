@@ -29,6 +29,10 @@ async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
     match req.path().as_str() {
         prefix!("atproto-did") => Response::ok(did!()),
         prefix!("discord") => Response::ok(dh!()),
-        _ => Response::redirect(Url::parse(bsky_url!())?),
+        _ => Response::redirect(to_url(bsky_url!())),
     }
+}
+
+fn to_url(s: &str) -> Url {
+    Url::parse(s).unwrap()
 }
