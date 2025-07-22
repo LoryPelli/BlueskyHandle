@@ -34,5 +34,5 @@ async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
 }
 
 fn to_url(s: &str) -> Url {
-    Url::parse(s).unwrap()
+    s.parse().unwrap()
 }
