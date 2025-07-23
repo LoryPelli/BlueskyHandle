@@ -1,5 +1,6 @@
 use worker::{Context, Env, Request, Response, Result, event};
 
+#[macro_use]
 mod macros;
 
 #[event(fetch)]
