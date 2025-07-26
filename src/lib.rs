@@ -5,9 +5,10 @@ mod macros;
 
 #[event(fetch)]
 async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
-    match req.path().as_str() {
+    match &req.path()[1..] {
         prefix!("atproto-did") => Response::ok(did!()),
         prefix!("discord") => Response::ok(dh!()),
+        "_gh" => Response::redirect_str(gh!()),
         _ => Response::redirect_str(bsky!()),
     }
 }
@@ -17,6 +18,7 @@ trait Redirect: Sized {
 }
 
 impl Redirect for Response {
+    #[inline]
     fn redirect_str(s: &str) -> Result<Self> {
         Self::redirect(s.parse()?)
     }

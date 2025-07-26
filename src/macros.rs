@@ -1,6 +1,6 @@
 macro_rules! prefix {
     ($suffix:expr) => {
-        concat!("/.well-known/", $suffix)
+        concat!(".well-known/", $suffix)
     };
 }
 
@@ -13,6 +13,12 @@ macro_rules! did {
 macro_rules! dh {
     () => {
         "dh=18180114862af9d7aacc108e3c62aa172ae5e904"
+    };
+}
+
+macro_rules! gh {
+    () => {
+        "https://github.com/lorypelli/blueskyhandle"
     };
 }
 
