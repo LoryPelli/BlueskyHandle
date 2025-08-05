@@ -6,6 +6,7 @@ mod macros;
 #[event(fetch)]
 async fn fetch(req: Request, _: Env, _: Context) -> Result<Response> {
     match &req.path()[1..] {
+        "favicon.ico" => Response::redirect_str(icon!()),
         prefix!("atproto-did") => Response::ok(did!()),
         prefix!("discord") => Response::ok(dh!()),
         "_gh" => Response::redirect_str(gh!()),

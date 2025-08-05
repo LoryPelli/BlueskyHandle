@@ -16,6 +16,12 @@ macro_rules! dh {
     };
 }
 
+macro_rules! icon {
+    () => {
+        "https://web-cdn.bsky.app/static/favicon-32x32.png"
+    };
+}
+
 macro_rules! gh {
     () => {
         "https://github.com/lorypelli/blueskyhandle"
